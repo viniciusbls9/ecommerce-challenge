@@ -1,11 +1,13 @@
+import theme from '@/styles/theme'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { ThemeProvider } from 'styled-components'
 
 import GlobalStyles from 'styles/global'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Head>
         <title>React Avançado - Boilerplate</title>
@@ -13,6 +15,12 @@ function App({ Component, pageProps }: AppProps) {
           rel="shortcut icon"
           href="/img/icon-512.png"
           type="image/x-icon"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+          rel="stylesheet"
         />
         <link
           rel="apple-touch-icon"
@@ -26,7 +34,7 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   )
 }
 

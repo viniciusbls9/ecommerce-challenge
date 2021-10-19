@@ -1,7 +1,5 @@
-import Main from 'components/Main'
-
 function Home() {
-  return <Main />
+  return <h1>Ecommerce</h1>
 }
 
 export default Home

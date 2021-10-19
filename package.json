@@ -11,6 +11,7 @@
     "test:watch": "yarn test --watch",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public",
+    "test:ci": "npm test -- --coverage",
     "cross-env": "cross-env NODE_ENV=production yarn build",
     "generate": "yarn plop --plopfile generators/plopfile.js"
   },
