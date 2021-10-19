@@ -1,14 +1,16 @@
-import { render, screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/helpers'
+import { screen } from '@testing-library/react'
 
 import Header from '.'
 
 describe('<Header />', () => {
-it('should render the heading', () => {
-const { container } = render(
-<Header />)
+  it('should render the heading', () => {
+    const { container } = renderWithTheme(<Header />)
 
-expect(screen.getByRole('heading', { name: /Header/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('img', { name: /Ecommerce Logo/i })
+    ).toBeInTheDocument()
 
-expect(container.firstChild).toMatchSnapshot()
-})
+    expect(container.firstChild).toMatchSnapshot()
+  })
 })
