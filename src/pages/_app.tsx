@@ -1,3 +1,4 @@
+import Header from '@/components/Header'
 import theme from '@/styles/theme'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -33,6 +34,7 @@ function App({ Component, pageProps }: AppProps) {
           content="A simple proct starter to work with Typescript, React, NextJS and Styled Components"
         />
       </Head>
+      <Header />
       <Component {...pageProps} />
     </ThemeProvider>
   )

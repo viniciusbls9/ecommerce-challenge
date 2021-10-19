@@ -1,8 +1,8 @@
 import React from 'react'
-import * as Styles from './styled'
+import * as S from './styled'
 
 const Index: React.FC = () => {
-  return <Styles.Container>Cadastro</Styles.Container>
+  return <S.Wrapper>Cadastro</S.Wrapper>
 }
 
 export default Index

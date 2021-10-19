@@ -1,8 +1,8 @@
 import React from 'react'
-import * as Styles from './styled'
+import * as S from './styled'
 
 const Home: React.FC = () => {
-  return <Styles.Container>Home Page</Styles.Container>
+  return <S.Wrapper>Home Page</S.Wrapper>
 }
 
 export default Home
