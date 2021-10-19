@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import theme from '@/styles/theme'
 import { AppProps } from 'next/app'
+import Theme from 'styles/theme'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 
@@ -8,7 +9,7 @@ import GlobalStyles from 'styles/global'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={Theme}>
       <GlobalStyles />
       <Head>
         <title>React Avançado - Boilerplate</title>

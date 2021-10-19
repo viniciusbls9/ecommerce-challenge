@@ -1,9 +1,12 @@
 import * as S from './styles'
+import Logo from '../Logo'
 
 const Header = () => (
-<S.Wrapper>
-  <h1>Header</h1>
-</S.Wrapper>
+  <S.Wrapper>
+    <S.Container>
+      <Logo />
+    </S.Container>
+  </S.Wrapper>
 )
 
 export default Header
