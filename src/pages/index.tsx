@@ -1,5 +1,7 @@
-function Home() {
-  return <h1>Ecommerce</h1>
+import Home from './home'
+
+const Index = () => {
+  return <Home />
 }
 
-export default Home
+export default Index
