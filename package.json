@@ -13,7 +13,8 @@
     "build-storybook": "build-storybook -s ./public",
     "test:ci": "npm test -- --coverage",
     "cross-env": "cross-env NODE_ENV=production yarn build",
-    "generate": "yarn plop --plopfile generators/plopfile.js"
+    "generate": "yarn plop --plopfile generators/plopfile.js",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "src/**/*": [
@@ -51,7 +52,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^6.0.0",
+    "husky": "^7.0.2",
     "jest": "^27.0.6",
     "jest-styled-components": "^7.0.4",
     "lint-staged": "^11.0.0",
