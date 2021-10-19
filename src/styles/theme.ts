@@ -31,6 +31,10 @@ export default {
     gray: '#8F8F8F',
     darkGray: '#2E2F42'
   },
+  sizes: {
+    menuMobile: '5.6rem',
+    menuDesktop: '8rem'
+  },
   spacings: {
     xxsmall: '0.8rem',
     xsmall: '1.6rem',
