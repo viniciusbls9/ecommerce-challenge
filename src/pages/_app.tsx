@@ -1,5 +1,4 @@
 import Header from '@/components/Header'
-import theme from '@/styles/theme'
 import { AppProps } from 'next/app'
 import Theme from 'styles/theme'
 import Head from 'next/head'
@@ -12,7 +11,7 @@ function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={Theme}>
       <GlobalStyles />
       <Head>
-        <title>React Avançado - Boilerplate</title>
+        <title>Ecommerce</title>
         <link
           rel="shortcut icon"
           href="/img/icon-512.png"
