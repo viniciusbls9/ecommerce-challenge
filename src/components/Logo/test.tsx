@@ -1,13 +1,11 @@
-import { render, screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/helpers'
 
 import Logo from '.'
 
 describe('<Logo />', () => {
   it('should render the Logo component', () => {
-    render(<Logo />)
+    const { container } = renderWithTheme(<Logo />)
 
-    expect(
-      screen.getByRole('img', { name: /Ecommerce Logo/i })
-    ).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
