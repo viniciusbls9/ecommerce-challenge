@@ -5,6 +5,7 @@ import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalStyles from 'styles/global'
+import Footer from '@/components/Footer'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -36,6 +37,7 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </ThemeProvider>
   )
 }
