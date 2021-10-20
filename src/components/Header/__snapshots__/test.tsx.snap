@@ -27,7 +27,7 @@ exports[`<Header /> should render the heading 1`] = `
   width: 150px;
 }
 
-@media only screen and (min-width:768px) {
+@media (min-width:768px) {
   .c0 {
     height: 8rem;
   }
@@ -37,10 +37,26 @@ exports[`<Header /> should render the heading 1`] = `
   }
 }
 
-@media only screen and (min-width:768px) {
+@media (min-width:768px) {
   .c1 svg {
     width: 190px;
   }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:1170px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
 }
 
 @media (min-width:768px) {

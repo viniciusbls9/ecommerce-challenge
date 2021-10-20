@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.menu`
   ${({ theme }) => css`
@@ -6,13 +7,13 @@ export const Wrapper = styled.menu`
     width: 100%;
     height: ${theme.sizes.menuMobile};
 
-    @media only screen and (min-width: 768px) {
+    ${media.greaterThan('medium')`
       height: ${theme.sizes.menuDesktop};
 
       img {
         width: 190px;
       }
-    }
+    `}
   `}
 `
 
@@ -30,10 +31,10 @@ export const Container = styled.div`
       width: 150px;
     }
 
-    @media only screen and (min-width: 768px) {
+    ${media.greaterThan('medium')`
       svg {
         width: 190px;
       }
-    }
+    `}
   `}
 `
