@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavigationBar /> should render the NavigationBar 1`] = `
+.c0 {
+  width: 100%;
+  box-shadow: 0px -3px 10px #00000029;
+  position: absolute;
+  bottom: 0;
+}
+
+.c1 {
+  width: 100%;
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 10px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  color: #F231A5;
+  cursor: pointer;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  color: #8F8F8F;
+  cursor: pointer;
+}
+
+.c3 {
+  width: 18px;
+  height: 18px;
+}
+
+.c4 {
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  font-size: 0.8rem;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    position: initial;
+  }
+}
+
+@media (min-width:1170px) {
+  .c1 {
+    gap: 100px;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    width: 22px;
+    height: 22px;
+    margin-right: 15px;
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    font-size: 1.2rem;
+  }
+}
+
+<section
+  class="c0"
+>
+  <div
+    class="c1 navigation-bar-container"
+    repeatcount="5"
+  >
+    <a
+      class="c2"
+    >
+      <img
+        class="c3"
+        src="images/inicio.svg"
+      />
+      <h5
+        class="c4"
+      >
+        início
+      </h5>
+    </a>
+    <a
+      class="c5"
+    >
+      <img
+        class="c3"
+        src="images/roupas.svg"
+      />
+      <h5
+        class="c4"
+      >
+        roupas
+      </h5>
+    </a>
+    <a
+      class="c5"
+    >
+      <img
+        class="c3"
+        src="images/eletronicos.svg"
+      />
+      <h5
+        class="c4"
+      >
+        eletrônicos
+      </h5>
+    </a>
+    <a
+      class="c5"
+    >
+      <img
+        class="c3"
+        src="images/acessorios.svg"
+      />
+      <h5
+        class="c4"
+      >
+        acessórios
+      </h5>
+    </a>
+    <a
+      class="c5"
+    >
+      <img
+        class="c3"
+        src="images/acessorios.svg"
+      />
+      <h5
+        class="c4"
+      >
+        meu carrinho
+      </h5>
+    </a>
+  </div>
+</section>
+`
