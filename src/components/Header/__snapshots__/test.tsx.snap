@@ -43,6 +43,10 @@ exports[`<Header /> should render the heading 1`] = `
   }
 }
 
+@media (min-width:768px) {
+
+}
+
 <menu
   class="c0"
 >
@@ -247,4 +251,4 @@ exports[`<Header /> should render the heading 1`] = `
     </svg>
   </div>
 </menu>
-`;
+`
