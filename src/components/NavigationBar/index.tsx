@@ -7,10 +7,7 @@ const NavigationBar = () => {
   const router = useRouter()
   return (
     <S.Wrapper>
-      <S.Container
-        className="navigation-bar-container"
-        repeatCount={mockNavigation.length}
-      >
+      <S.Container repeatCount={mockNavigation.length}>
         {mockNavigation.map((items) => (
           <Link href={items.redirect} key={items.iconName}>
             <S.SingleNavigationContainer
