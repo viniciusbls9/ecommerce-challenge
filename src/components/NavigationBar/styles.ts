@@ -33,17 +33,25 @@ export const Container = styled.div<ContainerProps>`
   `}
 `
 
-export const SingleNavigationContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+interface SingleNavigationContainerProps {
+  isActive: boolean
+}
 
-  ${media.greaterThan('medium')`
-    flex-direction: row;
-    width: fit-content;
-    justify-content: space-between;
+export const SingleNavigationContainer = styled.a<SingleNavigationContainerProps>`
+  ${({ theme, isActive }) => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: ${isActive ? `${theme.colors.primary}` : `${theme.colors.gray}`};
+    cursor: pointer;
+
+    ${media.greaterThan('medium')`
+      flex-direction: row;
+      width: fit-content;
+      justify-content: space-between;
+    `}
   `}
 `
 export const NavigationIconImg = styled.img`
@@ -58,7 +66,6 @@ export const NavigationIconImg = styled.img`
 `
 export const NavigationName = styled.h5`
   ${({ theme }) => css`
-    color: ${theme.colors.gray};
     font-family: ${theme.font.family};
     font-size: ${theme.font.sizes.xxsmall};
 

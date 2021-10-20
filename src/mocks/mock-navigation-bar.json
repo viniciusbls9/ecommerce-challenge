@@ -1,22 +1,27 @@
 [
   {
     "iconPath": "images/inicio.svg",
-    "iconName": "início"
+    "iconName": "início",
+    "redirect": "/"
   },
   {
     "iconPath": "images/roupas.svg",
-    "iconName": "roupas"
+    "iconName": "roupas",
+    "redirect": "/roupas"
   },
   {
     "iconPath": "images/eletronicos.svg",
-    "iconName": "eletrônicos"
+    "iconName": "eletrônicos",
+    "redirect": "/eletronicos"
   },
   {
     "iconPath": "images/acessorios.svg",
-    "iconName": "acessórios"
+    "iconName": "acessórios",
+    "redirect": "/acessorios"
   },
   {
     "iconPath": "images/acessorios.svg",
-    "iconName": "meu carrinho"
+    "iconName": "meu carrinho",
+    "redirect": "/meu-carrinho"
   }
 ]
