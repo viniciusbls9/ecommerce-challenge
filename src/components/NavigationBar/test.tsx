@@ -3,6 +3,15 @@ import mockNavigation from 'mocks/mock-navigation-bar.json'
 
 import NavigationBar from '.'
 
+jest.mock('next/router', () => ({
+  useRouter: () => ({
+    route: '',
+    pathname: '',
+    query: '',
+    asPath: '/'
+  })
+}))
+
 describe('<NavigationBar />', () => {
   it('should render the NavigationBar for mobile', () => {
     const { container } = renderWithTheme(<NavigationBar />)
