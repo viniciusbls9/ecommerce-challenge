@@ -27,10 +27,4 @@ export const SingleIconContainer = styled.div``
 export const NavigationIconImg = styled.img`
   width: 30px;
   height: 30px;
-
-  /* ${media.greaterThan('medium')`
-    width: 22px;
-    height: 22px;
-    margin-right: 15px;
-  `} */
 `
