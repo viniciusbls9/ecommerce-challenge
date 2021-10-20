@@ -1,0 +1,22 @@
+[
+  {
+    "iconPath": "images/inicio.svg",
+    "iconName": "início"
+  },
+  {
+    "iconPath": "images/roupas.svg",
+    "iconName": "roupas"
+  },
+  {
+    "iconPath": "images/eletronicos.svg",
+    "iconName": "eletrônicos"
+  },
+  {
+    "iconPath": "images/acessorios.svg",
+    "iconName": "acessórios"
+  },
+  {
+    "iconPath": "images/acessorios.svg",
+    "iconName": "meu carrinho"
+  }
+]
