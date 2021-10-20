@@ -130,7 +130,7 @@ exports[`<NavigationBar /> should render the NavigationBar 1`] = `
   class="c0"
 >
   <div
-    class="c1 navigation-bar-container"
+    class="c1"
     repeatcount="5"
   >
     <a
