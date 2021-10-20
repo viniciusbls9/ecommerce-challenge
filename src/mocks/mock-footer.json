@@ -1,0 +1,18 @@
+[
+  {
+    "iconPath": "images/face.svg",
+    "redirect": "https://facebook.com"
+  },
+  {
+    "iconPath": "images/insta.svg",
+    "redirect": "https://instagram.com"
+  },
+  {
+    "iconPath": "images/twitter.svg",
+    "redirect": "https://twitter.com/"
+  },
+  {
+    "iconPath": "images/youtube.svg",
+    "redirect": "https://www.youtube.com/"
+  }
+]
