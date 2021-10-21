@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
-export const Wrapper = styled.menu`
+export const HeaderWrapper = styled.menu`
   ${({ theme }) => css`
     background-color: ${theme.colors.darkGray};
     width: 100%;
@@ -17,7 +17,7 @@ export const Wrapper = styled.menu`
   `}
 `
 
-export const Container = styled.div`
+export const HeaderContainer = styled.div`
   ${({ theme }) => css`
     width: 100%;
     max-width: ${theme.grid.container};

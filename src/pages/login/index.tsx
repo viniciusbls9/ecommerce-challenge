@@ -62,7 +62,12 @@ const Index: React.FC = () => {
 
   return (
     <S.Wrapper>
-      <S.Container>{renderInputs()}</S.Container>
+      <S.Container>
+        {renderInputs()}
+        {renderInputs()}
+        {renderInputs()}
+        {renderInputs()}
+      </S.Container>
     </S.Wrapper>
   )
 }

@@ -4,11 +4,11 @@ import NavigationBar from '../NavigationBar'
 
 const Header = () => (
   <>
-    <S.Wrapper>
-      <S.Container>
+    <S.HeaderWrapper>
+      <S.HeaderContainer>
         <Logo />
-      </S.Container>
-    </S.Wrapper>
+      </S.HeaderContainer>
+    </S.HeaderWrapper>
     <NavigationBar />
   </>
 )

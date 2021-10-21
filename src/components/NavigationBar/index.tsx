@@ -6,8 +6,8 @@ import * as S from './styles'
 const NavigationBar = () => {
   const router = useRouter()
   return (
-    <S.Wrapper>
-      <S.Container repeatCount={mockNavigation.length}>
+    <S.NavigationWrapper>
+      <S.NavigationContainer repeatCount={mockNavigation.length}>
         {mockNavigation.map((items) => (
           <Link href={items.redirect} key={items.iconName}>
             <S.SingleNavigationContainer
@@ -18,8 +18,8 @@ const NavigationBar = () => {
             </S.SingleNavigationContainer>
           </Link>
         ))}
-      </S.Container>
-    </S.Wrapper>
+      </S.NavigationContainer>
+    </S.NavigationWrapper>
   )
 }
 

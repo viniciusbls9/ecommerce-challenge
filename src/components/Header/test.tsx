@@ -4,7 +4,7 @@ import { screen } from '@testing-library/react'
 import Header from '.'
 
 describe('<Header />', () => {
-  it('should render the heading', () => {
+  it('should render the header', () => {
     const { container } = renderWithTheme(<Header />)
 
     expect(

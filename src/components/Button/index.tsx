@@ -21,7 +21,7 @@ const Button = ({
   color,
   fontSize
 }: ButtonProps) => (
-  <S.Wrapper
+  <S.ButtonWrapper
     width={width}
     maxWidth={maxWidth}
     height={height}
@@ -32,7 +32,7 @@ const Button = ({
     fontSize={fontSize}
   >
     {label}
-  </S.Wrapper>
+  </S.ButtonWrapper>
 )
 
 export default Button

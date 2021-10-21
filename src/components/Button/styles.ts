@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { ButtonProps } from '.'
 
-export const Wrapper = styled.button<ButtonProps>`
+export const ButtonWrapper = styled.button<ButtonProps>`
   ${({ width, maxWidth, height, background, theme, color, fontSize }) => css`
     width: ${width};
     max-width: ${maxWidth};

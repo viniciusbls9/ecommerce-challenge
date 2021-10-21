@@ -3,8 +3,8 @@ import Link from 'next/link'
 import * as S from './styles'
 
 const Footer = () => (
-  <S.Wrapper>
-    <S.Container>
+  <S.FooterWrapper>
+    <S.FooterContainer>
       {mockNavigation.map((items) => (
         <Link href={items.redirect} key={items.redirect}>
           <S.SingleIconContainer>
@@ -12,8 +12,8 @@ const Footer = () => (
           </S.SingleIconContainer>
         </Link>
       ))}
-    </S.Container>
-  </S.Wrapper>
+    </S.FooterContainer>
+  </S.FooterWrapper>
 )
 
 export default Footer

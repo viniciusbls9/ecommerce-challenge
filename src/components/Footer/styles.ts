@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
-export const Wrapper = styled.section`
+export const FooterWrapper = styled.section`
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -16,7 +16,7 @@ export const Wrapper = styled.section`
     height: 13.5rem;
   `}
 `
-export const Container = styled.div`
+export const FooterContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
