@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProgressionStep /> should render the heading 1`] = `
+<progress
+  class=""
+  max="100"
+  value="50"
+>
+  <h1>
+    ProgressionStep
+  </h1>
+</progress>
+`
