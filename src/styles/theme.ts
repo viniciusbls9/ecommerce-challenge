@@ -3,9 +3,6 @@ export default {
     container: '130rem',
     gutter: '3.2rem'
   },
-  border: {
-    radius: '0.4rem'
-  },
   font: {
     family:
       "Open Sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
@@ -30,9 +27,11 @@ export default {
     black: '#030517',
     lightGray: '#EAEAEA',
     gray: '#8F8F8F',
-    darkGray: '#2E2F42'
+    darkGray: '#2E2F42',
+    boxShadow: '#00000029'
   },
   sizes: {
+    xlarge: '2.0rem',
     menuMobile: '5.6rem',
     menuDesktop: '8rem'
   },
