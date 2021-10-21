@@ -2,8 +2,7 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 
 export const FooterWrapper = styled.section`
-  position: absolute;
-  bottom: 0;
+  grid-area: footer;
   width: 100%;
   height: 10.5rem;
   background: transparent linear-gradient(180deg, #ff0000 0%, #f91e96 100%) 0%

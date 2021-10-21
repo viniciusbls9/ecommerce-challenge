@@ -3,6 +3,7 @@ import media from 'styled-media-query'
 
 export const HeaderWrapper = styled.menu`
   ${({ theme }) => css`
+    grid-area: header;
     background-color: ${theme.colors.darkGray};
     width: 100%;
     height: ${theme.sizes.menuMobile};

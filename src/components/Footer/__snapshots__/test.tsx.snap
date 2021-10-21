@@ -2,8 +2,7 @@
 
 exports[`<Footer /> should render the footer 1`] = `
 .c0 {
-  position: absolute;
-  bottom: 0;
+  grid-area: footer;
   width: 100%;
   height: 10.5rem;
   background: transparent linear-gradient(180deg,#ff0000 0%,#f91e96 100%) 0% 0% no-repeat padding-box;

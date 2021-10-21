@@ -1,18 +1,17 @@
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.div`
+export const LoginWrapper = styled.div`
   width: 100%;
-  height: calc(100vh - 15rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow-y: auto;
 `
 
-export const Container = styled.div`
+export const LoginContainer = styled.div`
   width: 100%;
-  max-width: 700px;
+  height: 100%;
+  max-width: 400px;
   padding: 20px;
 `
 

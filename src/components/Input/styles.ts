@@ -11,7 +11,7 @@ export const InputWrapper = styled.div`
 export const Input = styled.input`
   ${({ theme }) => css`
     width: 100%;
-    height: ${theme.spacings.xlarge};
+    height: ${theme.spacings.xxlarge};
     border: 1px solid ${theme.colors.black};
     padding: 10px;
     border-radius: 6px;

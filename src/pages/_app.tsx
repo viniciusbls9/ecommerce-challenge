@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components'
 
 import GlobalStyles from 'styles/global'
 import Footer from '@/components/Footer'
+import * as S from '../styles/global'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -35,9 +36,13 @@ function App({ Component, pageProps }: AppProps) {
           content="A simple proct starter to work with Typescript, React, NextJS and Styled Components"
         />
       </Head>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <S.DefaultLayout>
+        <Header />
+        <S.PagesWrapper>
+          <Component {...pageProps} />
+        </S.PagesWrapper>
+        <Footer />
+      </S.DefaultLayout>
     </ThemeProvider>
   )
 }

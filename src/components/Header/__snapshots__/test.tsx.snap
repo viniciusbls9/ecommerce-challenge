@@ -2,6 +2,7 @@
 
 exports[`<Header /> should render the header 1`] = `
 .c0 {
+  grid-area: header;
   background-color: #2E2F42;
   width: 100%;
   height: 5.6rem;

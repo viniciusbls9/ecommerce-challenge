@@ -3,6 +3,7 @@ import media from 'styled-media-query'
 
 export const NavigationWrapper = styled.section`
   ${({ theme }) => css`
+    grid-area: navigationBar;
     width: 100%;
     box-shadow: 0px -3px 10px #00000029;
     background-color: ${theme.colors.white};
