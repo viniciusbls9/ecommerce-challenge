@@ -20,6 +20,7 @@ export const Title = styled.h1`
     font-size: 22px;
     line-height: 19px;
     color: ${theme.colors.black};
+    margin-bottom: 30px;
   `}
 `
 

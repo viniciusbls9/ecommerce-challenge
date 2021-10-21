@@ -1,5 +1,6 @@
 import Button from '@/components/Button'
 import Input from '@/components/Input'
+import ProgressionStep from '@/components/ProgressionStep'
 import theme from '@/styles/theme'
 import React, { FormEvent, useState } from 'react'
 import * as S from './styles'
@@ -18,6 +19,8 @@ const Index: React.FC = () => {
     return (
       <S.Form onSubmit={handleNextStep}>
         <S.Title>Criar conta</S.Title>
+
+        <ProgressionStep />
 
         <Input
           type="text"
