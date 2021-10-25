@@ -9,6 +9,9 @@ export interface ButtonProps {
   onClick?: () => void
   color: string
   fontSize: string
+  id?: string
+  boxShadow?: string
+  border?: string
 }
 
 const Button = ({
@@ -19,7 +22,10 @@ const Button = ({
   label,
   onClick,
   color,
-  fontSize
+  fontSize,
+  id,
+  boxShadow,
+  border
 }: ButtonProps) => (
   <S.ButtonWrapper
     width={width}
@@ -30,6 +36,9 @@ const Button = ({
     onClick={onClick}
     color={color}
     fontSize={fontSize}
+    id={id}
+    boxShadow={boxShadow}
+    border={border}
   >
     {label}
   </S.ButtonWrapper>

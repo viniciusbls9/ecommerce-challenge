@@ -1,13 +1,101 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ProgressionStep /> should render the heading 1`] = `
-<progress
-  class=""
-  max="100"
-  value="50"
+.c0 {
+  width: 100%;
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.c1 {
+  width: 100%;
+  height: 7px;
+  border-radius: 14px;
+}
+
+.c1::-webkit-progress-bar {
+  background-color: #EAEAEA;
+  border-radius: 14px;
+}
+
+.c1::-webkit-progress-value {
+  background: transparent linear-gradient(180deg,#24C92B 0%,#099F0F 100%) 0% 0% no-repeat padding-box;
+  border-radius: 14px;
+}
+
+.c2 {
+  width: 100%;
+  position: absolute;
+  top: -10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #EAEAEA;
+  color: #FAFAFA;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.c3:first-child {
+  margin-left: 20px;
+}
+
+<div
+  class="c0"
 >
-  <h1>
-    ProgressionStep
-  </h1>
-</progress>
+  <progress
+    class="c1"
+    max="100"
+    value="NaN"
+  />
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      1
+    </div>
+    <div
+      class="c3"
+    >
+      2
+    </div>
+    <div
+      class="c3"
+    >
+      3
+    </div>
+  </div>
+</div>
 `

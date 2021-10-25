@@ -28,7 +28,9 @@ export default {
     lightGray: '#EAEAEA',
     gray: '#8F8F8F',
     darkGray: '#2E2F42',
-    boxShadow: '#00000029'
+    boxShadow: '#00000029',
+    lightGreen: '#24C92B',
+    darkGreen: '#099F0F'
   },
   sizes: {
     xlarge: '2.0rem',

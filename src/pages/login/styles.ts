@@ -24,10 +24,23 @@ export const Title = styled.h1`
   `}
 `
 
-export const Form = styled.form`
+export const FormsWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`
+
+export const TabContentWrapper = styled.div`
+  width: 100%;
+`
+
+export const InputStep = styled.div`
+  width: 100%;
+  /* display: none; */
+
+  &.hidden {
+    display: none;
+  }
 `
