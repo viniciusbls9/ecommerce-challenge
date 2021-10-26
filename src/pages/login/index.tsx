@@ -49,7 +49,7 @@ const Index: React.FC = () => {
 
   const renderInputsStepOne = () => {
     return (
-      <S.InputStep className="active">
+      <S.InputStep>
         <Input
           type="text"
           placeholder="nome"
