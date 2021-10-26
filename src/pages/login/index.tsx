@@ -4,6 +4,7 @@ import Input from '@/components/Input'
 import ProgressionStep from '@/components/ProgressionStep'
 import theme from '@/styles/theme'
 import * as S from './styles'
+import cepApi from '@/services/viaCEP'
 
 const Index: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1)
@@ -112,6 +113,7 @@ const Index: React.FC = () => {
           onChange={(e) => {
             setCep(e.target.value)
           }}
+          onBlur={() => handleBlurCEPInput(cep)}
         />
 
         <Input
@@ -142,6 +144,15 @@ const Index: React.FC = () => {
         />
       </S.InputStep>
     )
+  }
+
+  const handleBlurCEPInput = async (value: string) => {
+    await cepApi.getCEP(value).then((data) => {
+      setCep(data.cep)
+      setStreet(data.logradouro)
+      setCity(data.localidade)
+      setCountry('Brasil')
+    })
   }
 
   const handleNextStep = () => {
@@ -243,5 +254,13 @@ const Index: React.FC = () => {
     </S.LoginWrapper>
   )
 }
+
+// export async function getServerSideProps(ctx) {
+//   // const api = await cepApi.get(`${cep}`)
+//   console.log(ctx)
+
+//   // Pass data to the page via props
+//   return { props: {} }
+// }
 
 export default Index
