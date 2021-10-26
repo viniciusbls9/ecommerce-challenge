@@ -7,6 +7,10 @@ import * as S from './styles'
 
 const Index: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1)
+  const [stepType, setStepType] = useState('login')
+
+  const [loginName, setLoginName] = useState('')
+  const [loginPassword, setLoginPassword] = useState('')
 
   const [name, setName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -20,9 +24,32 @@ const Index: React.FC = () => {
 
   const tabRef = useRef<HTMLDivElement>(null)
 
+  const renderLoginFields = () => {
+    return (
+      <S.InputStep>
+        <Input
+          type="text"
+          placeholder="nome"
+          value={loginName}
+          onChange={(e) => {
+            setLoginName(e.target.value)
+          }}
+        />
+        <Input
+          type="text"
+          placeholder="sobrenome"
+          value={loginPassword}
+          onChange={(e) => {
+            setLoginPassword(e.target.value)
+          }}
+        />
+      </S.InputStep>
+    )
+  }
+
   const renderInputsStepOne = () => {
     return (
-      <S.InputStep id="1">
+      <S.InputStep className="active">
         <Input
           type="text"
           placeholder="nome"
@@ -130,7 +157,7 @@ const Index: React.FC = () => {
     setCurrentStep(currentStep - 1)
   }
 
-  const renderInputs = () => {
+  const renderRegisterInputs = () => {
     return (
       <S.FormsWrapper>
         <S.Title>Criar conta</S.Title>
@@ -144,7 +171,7 @@ const Index: React.FC = () => {
         </S.TabContentWrapper>
 
         <Button
-          label="próximo"
+          label={currentStep === 3 ? 'cadastrar' : 'próximo'}
           width="100%"
           maxWidth="302px"
           height="36px"
@@ -168,13 +195,51 @@ const Index: React.FC = () => {
             onClick={() => handleBackStep()}
           />
         )}
+
+        <S.AlreadyAccountWrapper>
+          <S.Paragraph>
+            Já tem uma conta?{' '}
+            <S.Link onClick={() => setStepType('login')}>entrar</S.Link>
+          </S.Paragraph>
+        </S.AlreadyAccountWrapper>
+      </S.FormsWrapper>
+    )
+  }
+
+  const renderLoginInputs = () => {
+    return (
+      <S.FormsWrapper>
+        <S.Title>Entrar</S.Title>
+
+        <S.TabContentWrapper>{renderLoginFields()}</S.TabContentWrapper>
+
+        <Button
+          label="ver produtos"
+          width="100%"
+          maxWidth="302px"
+          height="36px"
+          background="linear-gradient(90deg, rgb(36, 201, 43), rgb(9, 159, 15))"
+          color={theme.colors.white}
+          fontSize={theme.font.sizes.medium}
+          boxShadow={`0px 3px 6px ${theme.colors.boxShadow}`}
+          onClick={() => handleNextStep()}
+        />
+
+        <S.AlreadyAccountWrapper>
+          <S.Paragraph>
+            não tem uma conta?{' '}
+            <S.Link onClick={() => setStepType('register')}>cadastrar</S.Link>
+          </S.Paragraph>
+        </S.AlreadyAccountWrapper>
       </S.FormsWrapper>
     )
   }
 
   return (
     <S.LoginWrapper>
-      <S.LoginContainer>{renderInputs()}</S.LoginContainer>
+      <S.LoginContainer>
+        {stepType === 'login' ? renderLoginInputs() : renderRegisterInputs()}
+      </S.LoginContainer>
     </S.LoginWrapper>
   )
 }
