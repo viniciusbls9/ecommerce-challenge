@@ -17,5 +17,15 @@ const props = [
 ]
 
 export const Default: Story<ProductCardProps> = () => (
-  <ProductCard products={props} />
+  <div>
+    {props.map((items) => (
+      <ProductCard
+        key={items.id}
+        id={items.id}
+        image={items.image}
+        title={items.title}
+        price={items.price}
+      />
+    ))}
+  </div>
 )

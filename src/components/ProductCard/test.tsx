@@ -14,7 +14,15 @@ const props = [
 
 describe('<ProductCard />', () => {
   it('should render the productCard', () => {
-    const { container } = renderWithTheme(<ProductCard products={props} />)
+    const { container } = renderWithTheme(
+      <ProductCard
+        key={props[0].id}
+        id={props[0].id}
+        image={props[0].image}
+        title={props[0].title}
+        price={props[0].price}
+      />
+    )
 
     expect(
       screen.getByText('Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops')

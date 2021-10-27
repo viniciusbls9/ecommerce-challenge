@@ -1,12 +1,9 @@
 import styled, { css } from 'styled-components'
 
-export const ProductCardWrapper = styled.div`
-  width: 100%;
-`
-
 export const ProductCard = styled.div`
   ${({ theme }) => css`
     width: 100%;
+    height: 328px;
     box-shadow: 0px 6px 12px #0000001f;
     border: 1px solid #00000026;
     background-color: ${theme.colors.white};
