@@ -23,7 +23,7 @@ exports[`<Footer /> should render the footer 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: repeat(4,1fr);
-  gap: 40px;
+  gap: 4rem;
   margin: 0 auto;
 }
 

@@ -60,7 +60,7 @@ exports[`<ProgressionStep /> should render the heading 1`] = `
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: #EAEAEA;
+  background-color: #099F0F;
   color: #FAFAFA;
   font-size: 14px;
   font-weight: bold;
@@ -70,13 +70,39 @@ exports[`<ProgressionStep /> should render the heading 1`] = `
   margin-left: 20px;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #EAEAEA;
+  color: #FAFAFA;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.c4:first-child {
+  margin-left: 20px;
+}
+
 <div
   class="c0"
 >
   <progress
     class="c1"
     max="100"
-    value="NaN"
+    value="10"
   />
   <div
     class="c2"
@@ -87,12 +113,12 @@ exports[`<ProgressionStep /> should render the heading 1`] = `
       1
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       2
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       3
     </div>

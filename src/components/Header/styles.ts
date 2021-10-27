@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.menu`
       height: ${theme.sizes.menuDesktop};
 
       img {
-        width: 190px;
+        width: 19rem;
       }
     `}
   `}
@@ -29,12 +29,12 @@ export const HeaderContainer = styled.div`
     padding: ${theme.spacings.xsmall};
 
     svg {
-      width: 150px;
+      width: 15rem;
     }
 
     ${media.greaterThan('medium')`
       svg {
-        width: 190px;
+        width: 19rem;
       }
     `}
   `}

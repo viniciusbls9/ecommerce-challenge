@@ -4,7 +4,7 @@ export const InputWrapper = styled.div`
   width: 100%;
 
   & + div {
-    margin-top: 10px;
+    margin-top: 1rem;
   }
 `
 
@@ -13,7 +13,7 @@ export const Input = styled.input`
     width: 100%;
     height: ${theme.spacings.xxlarge};
     border: 1px solid ${theme.colors.black};
-    padding: 10px;
+    padding: 1rem;
     border-radius: 6px;
 
     &:focus {
@@ -26,7 +26,7 @@ export const Input = styled.input`
 export const InputSelect = styled.select`
   ${({ theme }) => css`
     width: 100%;
-    height: 45px;
+    height: 4.5rem;
     border: 1px solid ${theme.colors.primary};
     padding: 1rem;
   `}
@@ -35,6 +35,6 @@ export const InputSelect = styled.select`
 export const Options = styled.option`
   ${({ theme }) => css`
     border-bottom: 1px solid ${theme.colors.black};
-    padding: 20px;
+    padding: 2rem;
   `}
 `

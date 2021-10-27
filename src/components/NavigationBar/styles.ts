@@ -5,7 +5,7 @@ export const NavigationWrapper = styled.section`
   ${({ theme }) => css`
     grid-area: navigationBar;
     width: 100%;
-    box-shadow: 0px -3px 10px #00000029;
+    box-shadow: 0px -3px 1rem #00000029;
     background-color: ${theme.colors.white};
     height: ${theme.spacings.xxlarge};
 
@@ -29,14 +29,14 @@ export const NavigationContainer = styled.div<NavigationContainerProps>`
     max-width: ${theme.grid.container};
     height: 100%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 1rem;
     display: grid;
     grid-template-columns: repeat(${repeatCount}, 1fr);
-    gap: 10px;
+    gap: 1rem;
     align-items: center;
 
     ${media.greaterThan('large')`
-      gap: 100px;
+      gap: 10rem;
     `}
   `}
 `
@@ -63,13 +63,13 @@ export const SingleNavigationContainer = styled.a<SingleNavigationContainerProps
   `}
 `
 export const NavigationIconImg = styled.img`
-  width: 18px;
-  height: 18px;
+  width: 1.8rem;
+  height: 1.8rem;
 
   ${media.greaterThan('medium')`
-    width: 22px;
-    height: 22px;
-    margin-right: 15px;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-right: 1.5rem;
   `}
 `
 export const NavigationName = styled.h5`

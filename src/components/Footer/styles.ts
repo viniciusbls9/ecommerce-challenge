@@ -18,7 +18,7 @@ export const FooterWrapper = styled.section`
 export const FooterContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 4rem;
   margin: 0 auto;
 `
 export const SingleIconContainer = styled.div``
