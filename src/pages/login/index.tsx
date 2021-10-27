@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react'
-import Button from '@/components/Button'
-import Input from '@/components/Input'
-import ProgressionStep from '@/components/ProgressionStep'
-import theme from '@/styles/theme'
+import Button from 'components/Button'
+import Input from 'components/Input'
+import ProgressionStep from 'components/ProgressionStep'
+import theme from 'styles/theme'
+import cepApi from 'services/viaCEP'
 import * as S from './styles'
-import cepApi from '@/services/viaCEP'
 
 const Index: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1)
