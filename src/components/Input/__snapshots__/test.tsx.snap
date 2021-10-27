@@ -27,6 +27,7 @@ exports[`<Input /> should render the Input 1`] = `
 >
   <input
     class="c1"
+    type="text"
   />
 </div>
 `
