@@ -22,3 +22,10 @@ export const Input = styled.input`
     }
   `}
 `
+
+export const InputSelect = styled.select`
+  width: 100%;
+  height: 45px;
+`
+
+export const Options = styled.option``
