@@ -25,6 +25,23 @@ const Index: React.FC = () => {
 
   const tabRef = useRef<HTMLDivElement>(null)
 
+  const mask = {
+    phone(value: string) {
+      return value
+        .replace(/\D+/g, '')
+        .replace(/(\d{2})(\d)/, '($1) $2')
+        .replace(/(\d{4})(\d)/, '$1-$2')
+        .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
+        .replace(/(-\d{4})\d+?$/, '$1')
+    },
+    cep(value: string) {
+      return value
+        .replace(/\D+/g, '')
+        .replace(/(\d{5})(\d)/, '$1-$2')
+        .replace(/(-\d{3})\d+?$/, '$1')
+    }
+  }
+
   const renderLoginFields = () => {
     return (
       <S.InputStep>
@@ -68,9 +85,9 @@ const Index: React.FC = () => {
           }}
         />
         <Input
-          type="number"
+          type="text"
           placeholder="telefone"
-          value={phone}
+          value={mask.phone(phone)}
           onChange={(e) => {
             setPhone(e.target.value)
           }}
@@ -83,7 +100,7 @@ const Index: React.FC = () => {
     return (
       <S.InputStep className="hidden">
         <Input
-          type="text"
+          type="email"
           placeholder="email"
           value={email}
           onChange={(e) => {
@@ -92,7 +109,7 @@ const Index: React.FC = () => {
         />
 
         <Input
-          type="text"
+          type="password"
           placeholder="criar senha"
           value={password}
           onChange={(e) => {
@@ -109,7 +126,7 @@ const Index: React.FC = () => {
         <Input
           type="text"
           placeholder="cep"
-          value={cep}
+          value={mask.cep(cep)}
           onChange={(e) => {
             setCep(e.target.value)
           }}
@@ -147,12 +164,18 @@ const Index: React.FC = () => {
   }
 
   const handleBlurCEPInput = async (value: string) => {
-    await cepApi.getCEP(value).then((data) => {
-      setCep(data.cep)
-      setStreet(data.logradouro)
-      setCity(data.localidade)
-      setCountry('Brasil')
-    })
+    if (cep.length < 9) return false
+    await cepApi
+      .getCEP(value)
+      .then((data) => {
+        setCep(data.cep)
+        setStreet(data.logradouro)
+        setCity(data.localidade)
+        setCountry('Brasil')
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   const handleNextStep = () => {
@@ -254,13 +277,5 @@ const Index: React.FC = () => {
     </S.LoginWrapper>
   )
 }
-
-// export async function getServerSideProps(ctx) {
-//   // const api = await cepApi.get(`${cep}`)
-//   console.log(ctx)
-
-//   // Pass data to the page via props
-//   return { props: {} }
-// }
 
 export default Index
