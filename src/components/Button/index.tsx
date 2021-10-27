@@ -1,6 +1,11 @@
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ElementType } from 'react'
 import * as S from './styles'
 
-export interface ButtonProps {
+type ButtonTypes =
+  | AnchorHTMLAttributes<HTMLAnchorElement>
+  | ButtonHTMLAttributes<HTMLButtonElement>
+
+export type ButtonProps = {
   width: string
   maxWidth: string
   height: string
@@ -12,7 +17,8 @@ export interface ButtonProps {
   id?: string
   boxShadow?: string
   border?: string
-}
+  as?: ElementType
+} & ButtonTypes
 
 const Button = ({
   width,
@@ -25,7 +31,8 @@ const Button = ({
   fontSize,
   id,
   boxShadow,
-  border
+  border,
+  ...props
 }: ButtonProps) => (
   <S.ButtonWrapper
     width={width}
@@ -39,6 +46,7 @@ const Button = ({
     id={id}
     boxShadow={boxShadow}
     border={border}
+    {...props}
   >
     {label}
   </S.ButtonWrapper>

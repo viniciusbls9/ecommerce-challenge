@@ -11,6 +11,7 @@ export const HomeWrapper = styled.div`
 export const HeaderWrapper = styled.div`
   display: grid;
   grid-template-rows: repeat(2, 1fr);
+  align-items: center;
   padding: 20px;
   text-align: center;
 
@@ -19,4 +20,10 @@ export const HeaderWrapper = styled.div`
   `}
 `
 
-export const Title = styled.h1``
+export const Title = styled.h1`
+  ${({ theme }) => css`
+    font-size: 22px;
+    line-height: 30px;
+    color: ${theme.colors.black};
+  `}
+`
