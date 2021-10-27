@@ -28,4 +28,9 @@ export const InputSelect = styled.select`
   height: 45px;
 `
 
-export const Options = styled.option``
+export const Options = styled.option`
+  ${({ theme }) => css`
+    border-bottom: 1px solid ${theme.colors.black};
+    padding: 20px;
+  `}
+`
