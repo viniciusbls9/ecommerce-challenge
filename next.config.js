@@ -7,5 +7,9 @@ module.exports = withPWA({
     dest: 'public',
     disable: !isProd
   },
+  images: {
+    domains: ['localhost', 'fakestoreapi.com'],
+    formats: ['image/jpg', 'image/png']
+  },
   reactStrictMode: true
 })
