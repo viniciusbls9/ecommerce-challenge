@@ -24,8 +24,12 @@ export const Input = styled.input`
 `
 
 export const InputSelect = styled.select`
-  width: 100%;
-  height: 45px;
+  ${({ theme }) => css`
+    width: 100%;
+    height: 45px;
+    border: 1px solid ${theme.colors.primary};
+    padding: 1rem;
+  `}
 `
 
 export const Options = styled.option`

@@ -1,14 +1,12 @@
 import React, { InputHTMLAttributes } from 'react'
 import * as S from './styles'
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  name?: string
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type?: string
   children?: string[]
 }
 
 const Input: React.FC<InputProps> = ({
-  name,
   type,
   children,
   ...rest
@@ -25,7 +23,7 @@ const Input: React.FC<InputProps> = ({
 
   return (
     <S.InputWrapper>
-      <S.Input type={type} id={name} {...rest} />
+      <S.Input type={type} {...rest} />
     </S.InputWrapper>
   )
 }
