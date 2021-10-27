@@ -12,7 +12,7 @@ export const LoginContainer = styled.div`
   width: 100%;
   height: 100%;
   max-width: 400px;
-  padding: 20px;
+  padding: 0 20px;
 `
 
 export const Title = styled.h1`

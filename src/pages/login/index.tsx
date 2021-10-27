@@ -21,7 +21,6 @@ const Index: React.FC = () => {
   const [cep, setCep] = useState('')
   const [street, setStreet] = useState('')
   const [city, setCity] = useState('')
-  const [country, setCountry] = useState('')
 
   const tabRef = useRef<HTMLDivElement>(null)
 
@@ -150,15 +149,6 @@ const Index: React.FC = () => {
             setCity(e.target.value)
           }}
         />
-
-        <Input
-          type="text"
-          placeholder="pais"
-          value={country}
-          onChange={(e) => {
-            setCountry(e.target.value)
-          }}
-        />
       </S.InputStep>
     )
   }
@@ -171,7 +161,6 @@ const Index: React.FC = () => {
         setCep(data.cep)
         setStreet(data.logradouro)
         setCity(data.localidade)
-        setCountry('Brasil')
       })
       .catch((error) => {
         console.log(error)
