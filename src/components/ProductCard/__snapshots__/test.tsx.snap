@@ -3,7 +3,9 @@
 exports[`<ProductCard /> should render the productCard 1`] = `
 .c0 {
   width: 100%;
-  height: 328px;
+  max-width: 38rem;
+  height: 100%;
+  max-height: 40rem;
   box-shadow: 0px 6px 12px #0000001f;
   border: 1px solid #00000026;
   border-radius: 1.4rem;
@@ -33,9 +35,22 @@ exports[`<ProductCard /> should render the productCard 1`] = `
   width: 100%;
   height: 100%;
   max-height: 202px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c2 {
+  width: 100%;
+  max-width: 38rem;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -55,7 +70,20 @@ exports[`<ProductCard /> should render the productCard 1`] = `
   padding: 2.4rem;
 }
 
-.c3 {
+.c4 {
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  margin-bottom: 1.6rem;
+}
+
+.c5 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.9rem;
+  margin-bottom: 1.6rem;
+}
+
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -72,8 +100,8 @@ exports[`<ProductCard /> should render the productCard 1`] = `
   max-width: 302px;
   height: 36px;
   background: linear-gradient(90deg,rgb(36,201,43),rgb(9,159,15));
-  margin-top: 30px;
-  border-radius: 18px;
+  margin: 0;
+  border-radius: 1.8rem;
   box-shadow: 0px 3px 6px #00000029;
   color: #FAFAFA;
   font-size: 1.6rem;
@@ -85,43 +113,26 @@ exports[`<ProductCard /> should render the productCard 1`] = `
   <div
     class="c1"
   >
-    <div
-      style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
-    >
-      <div
-        style="box-sizing: border-box; display: block; max-width: 100%;"
-      >
-        <img
-          alt=""
-          aria-hidden="true"
-          role="presentation"
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzI4IiBoZWlnaHQ9IjIwMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
-          style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-        />
-      </div>
-      <noscript />
-      <img
-        decoding="async"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-      />
-    </div>
+    <img
+      class="c2"
+      src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+    />
   </div>
   <div
-    class="c2"
+    class="c3"
   >
     <p
-      class=""
+      class="c4"
     >
       Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
     </p>
     <p
-      class=""
+      class="c5"
     >
       R$ 109.95
     </p>
     <a
-      class="c3"
+      class="c6"
       color="#FAFAFA"
       font-size="1.6rem"
       height="36px"
