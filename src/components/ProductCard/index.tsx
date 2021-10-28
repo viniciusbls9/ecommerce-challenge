@@ -4,7 +4,7 @@ import Button from '../Button'
 import theme from 'styles/theme'
 import { SingleProductProps } from 'models/product'
 
-const ProductCard = ({ id, image, title, price }: SingleProductProps) => {
+const SingleProductCard = ({ id, image, title, price }: SingleProductProps) => {
   return (
     <S.ProductCard>
       <S.ProductCardHeader>
@@ -18,7 +18,7 @@ const ProductCard = ({ id, image, title, price }: SingleProductProps) => {
             currency: 'BRL'
           }).format(price)}
         </S.ProductPrice>
-        <Link href={`product/${id.toString()}`}>
+        <Link href={`product/${id.toString()}`} passHref>
           <Button
             as="a"
             label="ver produto"
@@ -37,4 +37,4 @@ const ProductCard = ({ id, image, title, price }: SingleProductProps) => {
   )
 }
 
-export default ProductCard
+export default SingleProductCard
