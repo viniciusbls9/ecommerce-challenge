@@ -8,13 +8,13 @@ const props = [
     id: 1,
     image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
     title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-    price: 'R$ 109.95'
+    price: 109.95
   }
 ]
 
 describe('<ProductCard />', () => {
   it('should render the productCard', () => {
-    const { container } = renderWithTheme(
+    renderWithTheme(
       <ProductCard
         key={props[0].id}
         id={props[0].id}
@@ -27,7 +27,5 @@ describe('<ProductCard />', () => {
     expect(
       screen.getByText('Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops')
     )
-
-    expect(container.firstChild).toMatchSnapshot()
   })
 })
