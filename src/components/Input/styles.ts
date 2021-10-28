@@ -22,19 +22,3 @@ export const Input = styled.input`
     }
   `}
 `
-
-export const InputSelect = styled.select`
-  ${({ theme }) => css`
-    width: 100%;
-    height: 4.5rem;
-    border: 1px solid ${theme.colors.primary};
-    padding: 1rem;
-  `}
-`
-
-export const Options = styled.option`
-  ${({ theme }) => css`
-    border-bottom: 1px solid ${theme.colors.black};
-    padding: 2rem;
-  `}
-`
