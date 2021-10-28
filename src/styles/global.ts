@@ -30,7 +30,7 @@ const GlobalStyles = createGlobalStyle`
 export const DefaultLayout = styled.div`
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   display: grid;
   grid-template-areas:
     'header'
@@ -55,11 +55,14 @@ export const PagesWrapper = styled.div`
   grid-area: page;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 768px) and (max-width: 1050px) {
+    padding: 2rem;
+  }
 `
 
 export default GlobalStyles

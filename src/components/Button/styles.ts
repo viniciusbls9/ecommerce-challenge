@@ -12,6 +12,9 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     boxShadow,
     border
   }) => css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: ${width};
     max-width: ${maxWidth};
     height: ${height};
