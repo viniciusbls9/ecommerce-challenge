@@ -10,7 +10,8 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     color,
     fontSize,
     boxShadow,
-    border
+    border,
+    margin
   }) => css`
     display: flex;
     justify-content: center;
@@ -19,8 +20,8 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     max-width: ${maxWidth};
     height: ${height};
     background: ${background};
-    margin-top: 30px;
-    border-radius: 18px;
+    margin: ${margin};
+    border-radius: 1.8rem;
     box-shadow: ${boxShadow};
     color: ${color};
     font-size: ${fontSize};

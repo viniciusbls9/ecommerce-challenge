@@ -17,6 +17,7 @@ export type ButtonProps = {
   id?: string
   boxShadow?: string
   border?: string
+  margin?: string
   as?: ElementType
 } & ButtonTypes
 
@@ -32,6 +33,7 @@ const Button = ({
   id,
   boxShadow,
   border,
+  margin = '3rem 0 0 0',
   ...props
 }: ButtonProps) => (
   <S.ButtonWrapper
@@ -46,6 +48,7 @@ const Button = ({
     id={id}
     boxShadow={boxShadow}
     border={border}
+    margin={margin}
     {...props}
   >
     {label}
