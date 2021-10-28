@@ -37,6 +37,7 @@ export const Image = styled.img`
 
 export const ProductCardBody = styled.div`
   ${({ theme }) => css`
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -2,15 +2,9 @@ import * as S from './styles'
 import Link from 'next/link'
 import Button from '../Button'
 import theme from 'styles/theme'
+import { SingleProductProps } from 'models/product'
 
-export interface ProductCardProps {
-  id: number
-  image: string
-  title: string
-  price: string
-}
-
-const ProductCard = ({ id, image, title, price }: ProductCardProps) => {
+const ProductCard = ({ id, image, title, price }: SingleProductProps) => {
   return (
     <S.ProductCard>
       <S.ProductCardHeader>
@@ -18,7 +12,12 @@ const ProductCard = ({ id, image, title, price }: ProductCardProps) => {
       </S.ProductCardHeader>
       <S.ProductCardBody>
         <S.ProductTitle>{title}</S.ProductTitle>
-        <S.ProductPrice>{price}</S.ProductPrice>
+        <S.ProductPrice>
+          {new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+          }).format(price)}
+        </S.ProductPrice>
         <Link href={`product/${id.toString()}`}>
           <Button
             as="a"

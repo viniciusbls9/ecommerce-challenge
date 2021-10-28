@@ -37,6 +37,7 @@ export const ProductCardWrapper = styled.div`
       grid-template-columns: repeat(3, 1fr);
       padding: 0;
       gap: 2rem;
+      padding-bottom: ${theme.spacings.large};
     `}
   `}
 `
