@@ -49,3 +49,19 @@ export const Title = styled.h1`
     color: ${theme.colors.black};
   `}
 `
+
+export const Select = styled.select`
+  ${({ theme }) => css`
+    width: 100%;
+    height: 4.5rem;
+    border: 1px solid ${theme.colors.primary};
+    padding: 1rem;
+  `}
+`
+
+export const Option = styled.option`
+  ${({ theme }) => css`
+    border-bottom: 1px solid ${theme.colors.black};
+    padding: 2rem;
+  `}
+`

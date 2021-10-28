@@ -1,4 +1,3 @@
-import Input from '@/components/Input'
 import ProductCard from '@/components/ProductCard'
 import { ProductProps } from '@/models/product'
 import fakeAPI from '@/services/fakeAPI'
@@ -7,6 +6,10 @@ import React from 'react'
 import * as S from './styled'
 
 const Home: React.FC<ProductProps> = ({ products }: ProductProps) => {
+  const handleProductsFilter = (value: string) => {
+    console.log(value)
+  }
+
   const renderCards = () => {
     return (
       <S.ProductCardWrapper>
@@ -24,12 +27,19 @@ const Home: React.FC<ProductProps> = ({ products }: ProductProps) => {
   }
 
   const renderInputFilter = () => {
-    const filters = ['ordenar por', 'menor preço', 'a-z', 'mais recentes']
+    const filters = ['menor preço', 'a-z', 'mais recentes']
     return (
       <S.HeaderWrapper>
         <S.Title>Sugestões para você</S.Title>
 
-        <Input type="select">{filters}</Input>
+        <S.Select onChange={(e) => handleProductsFilter(e.target.value)}>
+          <S.Option value="">ordenar por</S.Option>
+          {filters.map((filter) => (
+            <S.Option key={filter} value={filter}>
+              {filter}
+            </S.Option>
+          ))}
+        </S.Select>
       </S.HeaderWrapper>
     )
   }
