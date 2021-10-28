@@ -1,5 +1,4 @@
 import * as S from './styles'
-import Image from 'next/image'
 import Link from 'next/link'
 import Button from '../Button'
 import theme from 'styles/theme'
@@ -15,12 +14,12 @@ const ProductCard = ({ id, image, title, price }: ProductCardProps) => {
   return (
     <S.ProductCard>
       <S.ProductCardHeader>
-        <Image src={image} width="100%" height="100%" unoptimized />
+        <S.Image src={image} />
       </S.ProductCardHeader>
       <S.ProductCardBody>
         <S.ProductTitle>{title}</S.ProductTitle>
         <S.ProductPrice>{price}</S.ProductPrice>
-        <Link href={id.toString()}>
+        <Link href={`product/${id.toString()}`}>
           <Button
             as="a"
             label="ver produto"
@@ -31,6 +30,7 @@ const ProductCard = ({ id, image, title, price }: ProductCardProps) => {
             color={theme.colors.white}
             fontSize={theme.font.sizes.medium}
             boxShadow={`0px 3px 6px ${theme.colors.boxShadow}`}
+            margin="0"
           />
         </Link>
       </S.ProductCardBody>
