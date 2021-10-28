@@ -10,15 +10,39 @@ const Home: React.FC = () => {
       image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
       title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
       price: 'R$ 109.95'
+    },
+    {
+      id: 2,
+      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
+      title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
+      price: 'R$ 109.95'
+    },
+    {
+      id: 3,
+      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
+      title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
+      price: 'R$ 109.95'
     }
   ]
 
   const renderCards = () => {
-    return <ProductCard products={props} />
+    return (
+      <S.ProductCardWrapper>
+        {props.map((product) => (
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            image={product.image}
+            title={product.title}
+            price={product.price}
+          />
+        ))}
+      </S.ProductCardWrapper>
+    )
   }
 
   const renderInputFilter = () => {
-    const filters = ['menor preço', 'a-z', 'mais recentes']
+    const filters = ['ordenar por', 'menor preço', 'a-z', 'mais recentes']
     return (
       <S.HeaderWrapper>
         <S.Title>Sugestões para você</S.Title>
