@@ -1,3 +1,4 @@
+import React from 'react'
 import { AnchorHTMLAttributes, ButtonHTMLAttributes, ElementType } from 'react'
 import * as S from './styles'
 
@@ -18,41 +19,18 @@ export type ButtonProps = {
   boxShadow?: string
   border?: string
   margin?: string
+  innerRef?: React.ForwardedRef<unknown>
+  props?: {
+    children?: React.ReactNode
+  }
   as?: ElementType
 } & ButtonTypes
 
-const Button = ({
-  width,
-  maxWidth,
-  height,
-  background,
-  label,
-  onClick,
-  color,
-  fontSize,
-  id,
-  boxShadow,
-  border,
-  margin = '3rem 0 0 0',
-  ...props
-}: ButtonProps) => (
-  <S.ButtonWrapper
-    width={width}
-    maxWidth={maxWidth}
-    height={height}
-    background={background}
-    label={label}
-    onClick={onClick}
-    color={color}
-    fontSize={fontSize}
-    id={id}
-    boxShadow={boxShadow}
-    border={border}
-    margin={margin}
-    {...props}
-  >
-    {label}
+// eslint-disable-next-line react/display-name
+const Button = React.forwardRef<ButtonTypes, ButtonProps>((props, ref) => (
+  <S.ButtonWrapper innerRef={ref} {...props}>
+    {props.label}
   </S.ButtonWrapper>
-)
+))
 
 export default Button
