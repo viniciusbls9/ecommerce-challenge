@@ -12,13 +12,8 @@ const SingleProductCard = ({ id, image, title, price }: SingleProductProps) => {
       </S.ProductCardHeader>
       <S.ProductCardBody>
         <S.ProductTitle>{title}</S.ProductTitle>
-        <S.ProductPrice>
-          {new Intl.NumberFormat('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-          }).format(price)}
-        </S.ProductPrice>
-        <Link href={`product/${id.toString()}`} passHref>
+        <S.ProductPrice>{price}</S.ProductPrice>
+        <Link href={`/product/${id.toString()}`}>
           <Button
             as="a"
             label="ver produto"
