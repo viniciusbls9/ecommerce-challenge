@@ -15,6 +15,12 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Ecommerce</title>
 
+        <link
+          rel="shortcut icon"
+          href="images/favicon.ico"
+          type="image/x-icon"
+        />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
