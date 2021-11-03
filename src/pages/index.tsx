@@ -8,7 +8,7 @@ import * as S from './styled'
 const Home: React.FC<ProductProps> = ({ products }: ProductProps) => {
   const [productList, setProductList] = useState(products)
 
-  const lowPrice = () => {
+  const lowPriceFilter = () => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const newData = [...products!]
     const newFormat = newData?.sort((a, b) => {
@@ -18,9 +18,32 @@ const Home: React.FC<ProductProps> = ({ products }: ProductProps) => {
     setProductList(newFormat)
   }
 
+  const alphabeticalOrderFilter = () => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const newData = [...products!]
+    const newFormat = newData?.sort((a, b) => {
+      if (a.title < b.title) {
+        return -1
+      } else {
+        return 1
+      }
+    })
+
+    setProductList(newFormat)
+  }
+
   const handleProductsFilter = (value: string) => {
-    if (value === 'menor preço') {
-      lowPrice()
+    switch (value) {
+      case 'menor preço':
+        lowPriceFilter()
+        break
+
+      case 'a-z':
+        alphabeticalOrderFilter()
+        break
+      default:
+        setProductList(products)
+        break
     }
   }
 
