@@ -9,5 +9,12 @@ export default {
       `${BASE_URL}/products?limit=${limit}`
     )
     return req.data
+  },
+
+  getCategory: async (category: string | string[] | undefined) => {
+    const req = await axios.get<SingleProductProps[]>(
+      `${BASE_URL}/products/category/${category}`
+    )
+    return req.data
   }
 }
