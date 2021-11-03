@@ -16,6 +16,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     width: ${width};
     max-width: ${maxWidth};
     height: ${height};

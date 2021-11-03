@@ -2,29 +2,46 @@ import ProductCard from '@/components/ProductCard'
 import { ProductProps } from '@/models/product'
 import fakeAPI from '@/services/fakeAPI'
 import { GetStaticProps } from 'next'
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import * as S from './styled'
 
 const Home: React.FC<ProductProps> = ({ products }: ProductProps) => {
-  const handleProductsFilter = (value: string) => {
-    console.log(value)
+  const [productList, setProductList] = useState(products)
+
+  const lowPrice = () => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const newData = [...products!]
+    const newFormat = newData?.sort((a, b) => {
+      return Number(a.price) - Number(b.price)
+    })
+
+    setProductList(newFormat)
   }
 
-  const renderCards = () => {
+  const handleProductsFilter = (value: string) => {
+    if (value === 'menor preço') {
+      lowPrice()
+    }
+  }
+
+  const renderCards = useCallback(() => {
     return (
       <S.ProductCardWrapper>
-        {products?.map((singleProduct) => (
+        {productList?.map((singleProduct) => (
           <ProductCard
             key={singleProduct.id}
             id={singleProduct.id}
             image={singleProduct.image}
             title={singleProduct.title}
-            price={singleProduct.price}
+            price={new Intl.NumberFormat('pt-BR', {
+              style: 'currency',
+              currency: 'BRL'
+            }).format(parseInt(singleProduct.price))}
           />
         ))}
       </S.ProductCardWrapper>
     )
-  }
+  }, [productList])
 
   const renderInputFilter = () => {
     const filters = ['menor preço', 'a-z', 'mais recentes']
@@ -60,11 +77,7 @@ export const getStaticProps: GetStaticProps = async () => {
       id: product.id || null,
       image: product.image || null,
       title: product.title || null,
-      price:
-        new Intl.NumberFormat('pt-BR', {
-          style: 'currency',
-          currency: 'BRL'
-        }).format(product.price) || null,
+      price: product.price || null,
       category: product.category || null,
       description: product.description || null
     }

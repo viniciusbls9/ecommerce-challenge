@@ -2,7 +2,7 @@ export interface SingleProductProps {
   id: number
   image: string
   title: string
-  price: number
+  price: string
   category?: string
   description?: string
 }
