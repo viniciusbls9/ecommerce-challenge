@@ -3,7 +3,7 @@ import { ProductProps } from '@/models/product'
 import fakeAPI from '@/services/fakeAPI'
 import { GetStaticProps } from 'next'
 import React, { useCallback, useState } from 'react'
-import * as S from './styled'
+import * as S from './styles'
 
 const Home: React.FC<ProductProps> = ({ products }: ProductProps) => {
   const [productList, setProductList] = useState(products)
@@ -37,7 +37,6 @@ const Home: React.FC<ProductProps> = ({ products }: ProductProps) => {
       case 'menor preço':
         lowPriceFilter()
         break
-
       case 'a-z':
         alphabeticalOrderFilter()
         break
