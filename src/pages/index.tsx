@@ -92,18 +92,7 @@ const Home: React.FC<ProductProps> = ({ products }: ProductProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fakeAPI.getRecommendedProducts('6')
-
-  const products = response.map((product) => {
-    return {
-      id: product.id || null,
-      image: product.image || null,
-      title: product.title || null,
-      price: product.price || null,
-      category: product.category || null,
-      description: product.description || null
-    }
-  })
+  const products = await fakeAPI.getRecommendedProducts('6')
 
   return {
     props: { products },
