@@ -2,7 +2,7 @@ import theme from 'styles/theme'
 import { createElement } from 'react'
 import * as S from './styles'
 
-interface StepsProgressProps {
+export interface StepsProgressProps {
   currentStep: number
 }
 

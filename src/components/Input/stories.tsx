@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Input, { InputProps } from '.'
+import Input from '.'
 
 export default {
   title: 'Input',
@@ -10,9 +10,3 @@ export default {
 } as Meta
 
 export const Default: Story = (args) => <Input {...args} />
-
-const props = ['menor preço']
-
-export const WithTypeSelect: Story<InputProps> = () => (
-  <Input type="select">{props}</Input>
-)
