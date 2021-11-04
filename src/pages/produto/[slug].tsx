@@ -1,50 +1,57 @@
-// import fakeAPI from '@/services/fakeAPI'
-// import { GetServerSideProps } from 'next'
+import fakeAPI from '@/services/fakeAPI'
+import { GetServerSideProps } from 'next'
+import Button from '@/components/Button'
+import theme from '@/styles/theme'
 import React from 'react'
 import * as S from './styles'
+import { ProductProps } from '@/models/product'
 
-const Product: React.FC = () => {
+const Product: React.FC<ProductProps> = ({ singleProduct }: ProductProps) => {
   return (
     <S.ProductWrapper>
       <S.ProductContainer>
-        <S.ProductImage />
+        <S.ProductImage src={singleProduct?.image} />
 
         <S.ProductInfoWrapper>
-          <S.ProductTitle>Boné Bordado Harry Potter Grifinoria</S.ProductTitle>
-          <S.ProductPrice>R$30,00</S.ProductPrice>
+          <S.ProductTitle>{singleProduct?.title}</S.ProductTitle>
+          <S.ProductPrice>{singleProduct?.price}</S.ProductPrice>
           <S.ProductDescription>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dicta
-            rerum possimus dolores assumenda, officia quibusdam, praesentium nam
-            non debitis nostrum enim neque. Atque cum nemo repellat reiciendis
-            ducimus impedit?
+            {singleProduct?.description}
           </S.ProductDescription>
+
+          <Button
+            label="adicionar ao carrinho"
+            width="100%"
+            maxWidth="302px"
+            height="36px"
+            background="linear-gradient(90deg, rgb(36, 201, 43), rgb(9, 159, 15))"
+            backgroundHover="linear-gradient(rgb(9, 159, 15), rgb(36, 201, 43))"
+            color={theme.colors.white}
+            fontSize={theme.font.sizes.medium}
+            boxShadow={`0px 3px 6px ${theme.colors.boxShadow}`}
+            margin="0"
+          />
         </S.ProductInfoWrapper>
       </S.ProductContainer>
     </S.ProductWrapper>
   )
 }
 
-// export const getServerSideProps: GetServerSideProps = async (ctx) => {
-//   const { query } = ctx
-//   const category = query?.category
-//   let products
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { query } = ctx
+  const productSlug = query?.slug
 
-//   try {
-//     if (category === 'clothing') {
-//       const allProducts = await fakeAPI.getProducts()
-//       products = allProducts.filter((product) => {
-//         return product.category?.includes(category)
-//       })
-//     } else {
-//       products = await fakeAPI.getCategory(category)
-//     }
-//   } catch (error) {
-//     console.log(error)
-//   }
+  let singleProduct
 
-//   return {
-//     props: { products }
-//   }
-// }
+  try {
+    singleProduct = await fakeAPI.getSingleProduct(productSlug)
+  } catch (error) {
+    console.log(error)
+  }
+
+  return {
+    props: { singleProduct }
+  }
+}
 
 export default Product
