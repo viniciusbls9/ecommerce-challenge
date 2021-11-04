@@ -101,6 +101,7 @@ exports[`<ProgressionStep /> should render the heading 1`] = `
 >
   <progress
     class="c1"
+    data-testid="progress"
     max="100"
     value="10"
   />

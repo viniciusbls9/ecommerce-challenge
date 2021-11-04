@@ -7,6 +7,7 @@ module.exports = {
   moduleDirectories: ['node_modules', 'src'],
   modulePathIgnorePatterns: [
     '<rootDir>/src/types',
-    '<rootDir>/src/pages/_app.tsx'
+    '<rootDir>/src/pages',
+    '<rootDir>/src/services'
   ]
 }
