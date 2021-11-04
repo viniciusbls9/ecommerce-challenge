@@ -7,7 +7,7 @@
   {
     "iconPath": "images/roupas.svg",
     "iconName": "roupas",
-    "redirect": "roupas"
+    "redirect": "clothing"
   },
   {
     "iconPath": "images/eletronicos.svg",
