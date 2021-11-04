@@ -35,7 +35,11 @@ const StepsProgress = ({ currentStep }: StepsProgressProps) => {
 
   return (
     <S.StepsProgressWrapper>
-      <S.Progress value={currentProgressValue} max="100" />
+      <S.Progress
+        value={currentProgressValue}
+        max="100"
+        data-testid="progress"
+      />
       <S.StepsProgressBulletContainer>
         {renderLoopProgressBullet()}
       </S.StepsProgressBulletContainer>
