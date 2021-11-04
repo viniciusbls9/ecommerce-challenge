@@ -16,6 +16,13 @@ export default {
     return req.data
   },
 
+  getSingleProduct: async (id: string | string[] | undefined) => {
+    const req = await axios.get<SingleProductProps[]>(
+      `${BASE_URL}/products/${id}`
+    )
+    return req.data
+  },
+
   getCategory: async (category: string | string[] | undefined) => {
     const req = await axios.get<SingleProductProps[]>(
       `${BASE_URL}/products/category/${category}`
