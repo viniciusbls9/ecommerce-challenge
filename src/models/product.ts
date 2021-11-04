@@ -9,4 +9,5 @@ export interface SingleProductProps {
 
 export interface ProductProps {
   products?: SingleProductProps[]
+  singleProduct?: SingleProductProps
 }
