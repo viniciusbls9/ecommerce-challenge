@@ -13,7 +13,7 @@ const SingleProductCard = ({ id, image, title, price }: SingleProductProps) => {
       <S.ProductCardBody>
         <S.ProductTitle>{title}</S.ProductTitle>
         <S.ProductPrice>{price}</S.ProductPrice>
-        <Link href={`/product/${id.toString()}`}>
+        <Link href={`/produto/${id.toString()}`}>
           <Button
             as="a"
             label="ver produto"

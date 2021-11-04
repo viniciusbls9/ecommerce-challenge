@@ -22,6 +22,10 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
 }
 
+  h1, h2, h3, h4, h5, p {
+    font-family: 'Open Sans', sans-serif;
+  }
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
