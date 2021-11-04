@@ -9,6 +9,7 @@ export default {
     maxWidth: '100px',
     height: '56',
     background: 'rgb(36, 201, 43)',
+    backgroundHover: 'rgb(9, 159, 15)',
     label: 'Button',
     onClick: () => console.log('fui clicado'),
     color: '#fff',

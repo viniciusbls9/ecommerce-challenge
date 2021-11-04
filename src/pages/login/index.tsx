@@ -199,6 +199,7 @@ const Index: React.FC = () => {
           maxWidth="302px"
           height="36px"
           background="linear-gradient(90deg, rgb(36, 201, 43), rgb(9, 159, 15))"
+          backgroundHover="linear-gradient(rgb(9, 159, 15), rgb(36, 201, 43))"
           color={theme.colors.white}
           fontSize={theme.font.sizes.medium}
           boxShadow={`0px 3px 6px ${theme.colors.boxShadow}`}

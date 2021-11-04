@@ -11,7 +11,8 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     fontSize,
     boxShadow,
     border,
-    margin
+    margin,
+    backgroundHover
   }) => css`
     display: flex;
     justify-content: center;
@@ -27,5 +28,11 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     color: ${color};
     font-size: ${fontSize};
     border: ${border};
+
+    transition: background 0.2s;
+
+    &:hover {
+      background: ${backgroundHover};
+    }
   `}
 `

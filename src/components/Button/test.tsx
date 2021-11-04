@@ -8,6 +8,7 @@ const props = {
   maxWidth: '100px',
   height: '56',
   background: 'rgb(36, 201, 43)',
+  backgroundHover: 'linear-gradient(rgb(9, 159, 15), rgb(36, 201, 43))',
   label: 'Button',
   onClick: () => console.log('fui clicado'),
   color: '#fff',

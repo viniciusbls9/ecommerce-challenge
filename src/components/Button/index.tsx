@@ -11,6 +11,7 @@ export type ButtonProps = {
   maxWidth: string
   height: string
   background: string
+  backgroundHover?: string
   label: string
   onClick?: () => void
   color: string
