@@ -7,21 +7,21 @@
   {
     "iconPath": "images/roupas.svg",
     "iconName": "roupas",
-    "redirect": "clothing"
+    "redirect": "/categoria/clothing"
   },
   {
     "iconPath": "images/eletronicos.svg",
     "iconName": "eletrônicos",
-    "redirect": "electronics"
+    "redirect": "/categoria/electronics"
   },
   {
     "iconPath": "images/acessorios.svg",
     "iconName": "acessórios",
-    "redirect": "jewelery"
+    "redirect": "/categoria/jewelery"
   },
   {
     "iconPath": "images/acessorios.svg",
     "iconName": "meu carrinho",
-    "redirect": "meu-carrinho"
+    "redirect": "/categoria/meu-carrinho"
   }
 ]
