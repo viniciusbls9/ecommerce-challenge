@@ -22,6 +22,6 @@
   {
     "iconPath": "images/acessorios.svg",
     "iconName": "meu carrinho",
-    "redirect": "/categoria/meu-carrinho"
+    "redirect": "meu-carrinho"
   }
 ]
