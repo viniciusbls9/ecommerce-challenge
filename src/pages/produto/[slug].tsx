@@ -7,6 +7,19 @@ import * as S from './styles'
 import { ProductProps } from '@/models/product'
 
 const Product: React.FC<ProductProps> = ({ singleProduct }: ProductProps) => {
+  const handleAddProductCart = () => {
+    const getProducts = localStorage.getItem('products')
+
+    if (getProducts === null) {
+      localStorage.setItem('products', JSON.stringify([singleProduct]))
+    } else {
+      const arrayProducts: [] = JSON.parse(getProducts || '')
+
+      arrayProducts.push({ ...singleProduct, quantity: 1 })
+      localStorage.setItem('products', JSON.stringify(arrayProducts))
+    }
+  }
+
   return (
     <S.ProductWrapper>
       <S.ProductContainer>
@@ -14,7 +27,12 @@ const Product: React.FC<ProductProps> = ({ singleProduct }: ProductProps) => {
 
         <S.ProductInfoWrapper>
           <S.ProductTitle>{singleProduct?.title}</S.ProductTitle>
-          <S.ProductPrice>{singleProduct?.price}</S.ProductPrice>
+          <S.ProductPrice>
+            {new Intl.NumberFormat('pt-BR', {
+              style: 'currency',
+              currency: 'BRL'
+            }).format(parseInt(singleProduct?.price || ''))}
+          </S.ProductPrice>
           <S.ProductDescription>
             {singleProduct?.description}
           </S.ProductDescription>
@@ -30,6 +48,7 @@ const Product: React.FC<ProductProps> = ({ singleProduct }: ProductProps) => {
             fontSize={theme.font.sizes.medium}
             boxShadow={`0px 3px 6px ${theme.colors.boxShadow}`}
             margin="0"
+            onClick={handleAddProductCart}
           />
         </S.ProductInfoWrapper>
       </S.ProductContainer>
