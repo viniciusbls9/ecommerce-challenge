@@ -5,19 +5,11 @@ import theme from '@/styles/theme'
 import React from 'react'
 import * as S from './styles'
 import { ProductProps } from '@/models/product'
+import localStorageService from '@/services/localStorageService'
 
 const Product: React.FC<ProductProps> = ({ singleProduct }: ProductProps) => {
   const handleAddProductCart = () => {
-    const getProducts = localStorage.getItem('products')
-
-    if (getProducts === null) {
-      localStorage.setItem('products', JSON.stringify([singleProduct]))
-    } else {
-      const arrayProducts: [] = JSON.parse(getProducts || '')
-
-      arrayProducts.push({ ...singleProduct, quantity: 1 })
-      localStorage.setItem('products', JSON.stringify(arrayProducts))
-    }
+    localStorageService.addProductCart('products', singleProduct)
   }
 
   return (
