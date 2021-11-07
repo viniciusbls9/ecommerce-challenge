@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import media from 'styled-media-query'
 
 export const CartWrapper = styled.div`
   width: 100%;
@@ -16,25 +15,31 @@ export const CartContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr;
 
-    ${media.greaterThan('medium')`
+    @media screen and (min-width: 940px) {
       padding: 0;
       grid-template-columns: auto 340px;
       gap: 1.7rem;
-    `}
+      height: 13rem;
+    }
   `}
 `
-export const PageTitle = styled.h1`
-  ${({ theme }) => css`
+export const PageTitle = styled.h1<{ textAlign: string }>`
+  ${({ theme, textAlign }) => css`
     width: 100%;
     max-width: ${theme.grid.container};
     margin: 0 auto;
     font-size: ${theme.font.sizes.xlarge};
     text-align: center;
     margin-bottom: 1rem;
+    padding-left: 2rem;
 
-    ${media.greaterThan('medium')`
-      text-align: left;
-    `}
+    @media screen and (min-width: 768px) {
+      text-align: ${textAlign};
+    }
+
+    @media screen and (min-width: 940px) {
+      padding-left: 0;
+    }
   `}
 `
 
@@ -42,15 +47,18 @@ export const CardProductWrapper = styled.div`
   ${({ theme }) => css`
     margin-bottom: ${theme.spacings.small};
     width: 100%;
+    max-width: 68.8rem;
     background: ${theme.colors.white};
     border: 1px solid #00000026;
     box-shadow: 0px 6px 12px #0000001f;
     border-radius: 1.4rem;
     padding: 1rem;
+    display: grid;
 
-    ${media.greaterThan('medium')`
+    @media screen and (min-width: 940px) {
       margin-bottom: 0;
-    `}
+      grid-template-columns: 353px auto;
+    }
   `}
 `
 
@@ -81,6 +89,13 @@ export const InfoCountProducts = styled.div`
 
   grid-template-columns: 100px 30px auto;
   align-items: center;
+
+  @media screen and (min-width: 940px) {
+    margin-top: 0rem;
+    grid-template-areas: 'countProducts productPrice productTrash';
+    grid-template-columns: 100px auto 30px;
+    justify-content: space-between;
+  }
 `
 
 export const CountProducts = styled.div`
@@ -137,11 +152,12 @@ export const ProductTrashWrapper = styled.div`
 export const CardPriceWrapper = styled.div`
   ${({ theme }) => css`
     width: 100%;
+    max-width: 68.8rem;
     background: ${theme.colors.white};
     border: 1px solid #00000026;
     box-shadow: 0px 6px 12px #0000001f;
     border-radius: 1.4rem;
-    padding: 1rem;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -155,8 +171,14 @@ export const TotalPrice = styled.h2`
     color: ${theme.colors.darkGreen};
     text-align: center;
 
-    ${media.greaterThan('medium')`
+    @media screen and (min-width: 768px) {
       margin-bottom: 2rem;
-    `}
+    }
   `}
+`
+export const WithoutProductWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
