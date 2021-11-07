@@ -147,7 +147,7 @@ exports[`<NavigationBar /> should render the NavigationBar 1`] = `
     >
       <img
         class="c3"
-        src="images/inicio.svg"
+        src="/images/inicio.svg"
       />
       <h5
         class="c4"
@@ -160,7 +160,7 @@ exports[`<NavigationBar /> should render the NavigationBar 1`] = `
     >
       <img
         class="c3"
-        src="images/roupas.svg"
+        src="/images/roupas.svg"
       />
       <h5
         class="c4"
@@ -173,7 +173,7 @@ exports[`<NavigationBar /> should render the NavigationBar 1`] = `
     >
       <img
         class="c3"
-        src="images/eletronicos.svg"
+        src="/images/eletronicos.svg"
       />
       <h5
         class="c4"
@@ -186,7 +186,7 @@ exports[`<NavigationBar /> should render the NavigationBar 1`] = `
     >
       <img
         class="c3"
-        src="images/acessorios.svg"
+        src="/images/acessorios.svg"
       />
       <h5
         class="c4"
@@ -199,7 +199,7 @@ exports[`<NavigationBar /> should render the NavigationBar 1`] = `
     >
       <img
         class="c3"
-        src="images/acessorios.svg"
+        src="/images/acessorios.svg"
       />
       <h5
         class="c4"

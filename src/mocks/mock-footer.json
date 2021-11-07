@@ -1,18 +1,18 @@
 [
   {
-    "iconPath": "images/face.svg",
+    "iconPath": "/images/face.svg",
     "redirect": "https://facebook.com"
   },
   {
-    "iconPath": "images/insta.svg",
+    "iconPath": "/images/insta.svg",
     "redirect": "https://instagram.com"
   },
   {
-    "iconPath": "images/twitter.svg",
+    "iconPath": "/images/twitter.svg",
     "redirect": "https://twitter.com/"
   },
   {
-    "iconPath": "images/youtube.svg",
+    "iconPath": "/images/youtube.svg",
     "redirect": "https://www.youtube.com/"
   }
 ]
