@@ -16,5 +16,13 @@ export default {
       arrayProducts.push({ ...value, quantity: 1 })
       localStorage.setItem(key, JSON.stringify(arrayProducts))
     }
+  },
+  getProductsLocalStorage: () => {
+    const getKey = localStorage?.key(1)
+
+    const getLocalStorage =
+      getKey !== '' ? JSON.parse(localStorage?.getItem('products') || '') : []
+
+    return getLocalStorage
   }
 }

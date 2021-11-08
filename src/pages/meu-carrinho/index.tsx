@@ -4,26 +4,28 @@ import { SingleProductProps } from '@/models/product'
 import { AddIcon, RemoveIcon, TrashIcon } from '@/utils/Icons'
 import theme from '@/styles/theme'
 import * as S from './styles'
+import localStorageService from '@/services/localStorageService'
 
 const MyCard: React.FC = () => {
   const [productsLocalStorage, setProductsLocalStorage] = useState([])
 
   useEffect(() => {
-    const getKey = localStorage?.key(1)
+    const getProducts = localStorageService.getProductsLocalStorage()
 
-    const getLocalStorage =
-      getKey !== '' ? JSON.parse(localStorage?.getItem('products') || '') : []
-
-    setProductsLocalStorage(getLocalStorage)
+    setProductsLocalStorage(getProducts)
   }, [])
+
+  const handleRemoveProduct = (productId: number) => {
+    console.log(productId)
+  }
 
   const renderProductCard = () => {
     return (
       <S.CardProductWrapper>
-        {productsLocalStorage.map((products: SingleProductProps) => {
+        {productsLocalStorage.map((products: SingleProductProps, index) => {
           return (
             <>
-              <S.InfoProducts>
+              <S.InfoProducts key={products.id}>
                 <S.ProductImage src={products.image} />
                 <S.ProductTitle>{products.title}</S.ProductTitle>
               </S.InfoProducts>
@@ -41,7 +43,11 @@ const MyCard: React.FC = () => {
                   </S.IconWrapper>
                 </S.CountProducts>
                 <S.ProductTrashWrapper>
-                  <TrashIcon color="#000000b3" size="28px" />
+                  <TrashIcon
+                    color="#000000b3"
+                    size="28px"
+                    onClick={() => handleRemoveProduct(index)}
+                  />
                 </S.ProductTrashWrapper>
                 <S.ProductPriceWrapper>
                   <S.ProductPrice>{products.price}</S.ProductPrice>
