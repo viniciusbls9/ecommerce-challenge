@@ -151,7 +151,16 @@ export const ProductPrice = styled.h2`
 `
 
 export const ProductTrashWrapper = styled.div`
+  cursor: pointer;
   grid-area: productTrash;
+
+  svg {
+    transition: filter 0.2s;
+
+    &:hover {
+      fill: #000000e7;
+    }
+  }
 `
 
 export const CardPriceWrapper = styled.div`

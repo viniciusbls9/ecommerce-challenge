@@ -11,12 +11,13 @@ const MyCard: React.FC = () => {
 
   useEffect(() => {
     const getProducts = localStorageService.getProductsLocalStorage()
-
     setProductsLocalStorage(getProducts)
   }, [])
 
-  const handleRemoveProduct = (productId: number) => {
-    console.log(productId)
+  const handleRemoveProduct = (indexProduct: number) => {
+    const getProducts: [] = localStorageService.getProductsLocalStorage()
+    getProducts.splice(indexProduct, 1)
+    localStorage.setItem('products', JSON.stringify(getProducts))
   }
 
   const renderProductCard = () => {
@@ -50,7 +51,12 @@ const MyCard: React.FC = () => {
                   />
                 </S.ProductTrashWrapper>
                 <S.ProductPriceWrapper>
-                  <S.ProductPrice>{products.price}</S.ProductPrice>
+                  <S.ProductPrice>
+                    {new Intl.NumberFormat('pt-BR', {
+                      style: 'currency',
+                      currency: 'BRL'
+                    }).format(parseInt(products?.price || ''))}
+                  </S.ProductPrice>
                 </S.ProductPriceWrapper>
               </S.InfoCountProducts>
             </>
