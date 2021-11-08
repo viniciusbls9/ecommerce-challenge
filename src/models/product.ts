@@ -1,9 +1,9 @@
 export interface SingleProductProps {
-  id: number
+  id?: number
   quantity?: number
-  image: string
-  title: string
-  price: string
+  image?: string
+  title?: string
+  price?: string
   category?: string
   description?: string
 }
