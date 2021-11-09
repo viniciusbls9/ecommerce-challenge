@@ -1,6 +1,7 @@
 export interface SingleProductProps {
   id?: number
-  quantity?: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  quantity?: string | any
   image?: string
   title?: string
   price?: string
