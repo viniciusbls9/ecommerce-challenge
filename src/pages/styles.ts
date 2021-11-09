@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
+import NotFound from 'pages/404'
 
 export const HomeWrapper = styled.div`
   ${({ theme }) => css`
@@ -65,3 +66,4 @@ export const Option = styled.option`
     padding: 2rem;
   `}
 `
+export default NotFound

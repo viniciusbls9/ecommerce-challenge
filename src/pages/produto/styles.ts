@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
+import NotFound from 'pages/404'
 
 export const ProductWrapper = styled.section`
   width: 100%;
@@ -55,3 +56,4 @@ export const ProductDescription = styled.p`
     line-height: 2rem;
   `}
 `
+export default NotFound

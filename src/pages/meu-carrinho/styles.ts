@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import NotFound from 'pages/404'
 
 export const CartWrapper = styled.div`
   width: 100%;
@@ -203,3 +204,5 @@ export const WithoutProductWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `
+
+export default NotFound

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import NotFound from 'pages/404'
 
 export const LoginWrapper = styled.div`
   width: 100%;
@@ -65,3 +66,5 @@ export const Link = styled.a`
     text-decoration: underline;
   `}
 `
+
+export default NotFound
