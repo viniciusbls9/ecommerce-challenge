@@ -12,7 +12,10 @@ const MyCard: React.FC = () => {
   >([])
 
   useEffect(() => {
-    const getProducts = localStorageService.getProductsLocalStorage()
+    const getProducts = localStorageService.getProductsLocalStorage(
+      1,
+      'products'
+    )
     setProductsLocalStorage(getProducts)
   }, [])
 
