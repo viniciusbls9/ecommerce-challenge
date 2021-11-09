@@ -8,6 +8,7 @@ module.exports = {
   modulePathIgnorePatterns: [
     '<rootDir>/src/types',
     '<rootDir>/src/pages',
-    '<rootDir>/src/services'
+    '<rootDir>/src/services',
+    '<rootDir>/src/utils'
   ]
 }

@@ -22,7 +22,7 @@ const Slug: React.FC<ProductProps> = ({ products }: ProductProps) => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const newData = [...products!]
     const newFormat = newData?.sort((a, b) => {
-      if (a.title < b.title) {
+      if (a?.title! < b?.title!) {
         return -1
       } else {
         return 1
@@ -58,7 +58,7 @@ const Slug: React.FC<ProductProps> = ({ products }: ProductProps) => {
             price={new Intl.NumberFormat('pt-BR', {
               style: 'currency',
               currency: 'BRL'
-            }).format(parseInt(singleProduct.price))}
+            }).format(parseInt(singleProduct.price || ''))}
           />
         ))}
       </S.ProductCardWrapper>
