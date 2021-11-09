@@ -4,6 +4,10 @@ export const CartWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding-top: 2rem;
+
+  @media screen and (min-width: 767px) {
+    height: 100vh;
+  }
 `
 
 export const CartContainer = styled.div`
@@ -19,7 +23,6 @@ export const CartContainer = styled.div`
       padding: 0;
       grid-template-columns: auto 340px;
       gap: 1.7rem;
-      height: 13rem;
     }
   `}
 `
@@ -178,6 +181,8 @@ export const CardPriceWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: sticky;
+    top: 10px;
   `}
 `
 export const TotalPrice = styled.h2`
