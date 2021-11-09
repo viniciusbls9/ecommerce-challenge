@@ -6,6 +6,7 @@ export default {
     const getProducts = localStorage.getItem(key)
 
     if (getProducts === null) {
+      // cria o produto em localStorage passando a quantidade
       const newValue = {
         ...value,
         quantity: 1
@@ -20,12 +21,21 @@ export default {
       )
 
       if (findProduct !== undefined) {
+        // atualiza o produto em localStorage passando a quantidade
         const newValue = {
           ...value,
           // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-          quantity: findProduct?.quantity! + 1
+          quantity: parseInt(findProduct?.quantity!) + 1
         }
-        localStorage.setItem(key, JSON.stringify([newValue]))
+
+        // busca o index do produto em especifico
+        const index = arrayProducts.findIndex(
+          (product) => product.id === value?.id
+        )
+
+        // deleta o produto "antigo", e adiciona o novo com a nova quantidade
+        arrayProducts.splice(index, 1, newValue)
+        localStorage.setItem(key, JSON.stringify(arrayProducts))
         return false
       }
 
@@ -37,7 +47,7 @@ export default {
     const getKey = localStorage?.key(keyIndex)
 
     const getLocalStorage =
-      getKey !== '' ? JSON.parse(localStorage?.getItem(key) || '') : []
+      getKey !== '' ? JSON.parse(localStorage?.getItem(key) || '[]') : []
 
     return getLocalStorage
   }

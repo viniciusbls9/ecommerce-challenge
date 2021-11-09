@@ -12,6 +12,8 @@ const MyCard: React.FC = () => {
     SingleProductProps[]
   >([])
 
+  const [totalValue, setTotalValue] = useState(0)
+
   useEffect(() => {
     const getProducts = localStorageService.getProductsLocalStorage(
       1,
@@ -19,6 +21,17 @@ const MyCard: React.FC = () => {
     )
     setProductsLocalStorage(getProducts)
   }, [])
+
+  useEffect(() => {
+    const getProducts: SingleProductProps[] =
+      localStorageService.getProductsLocalStorage(1, 'products')
+
+    const value = getProducts.map((product) => {
+      return parseInt(product?.price!) * parseInt(product?.quantity!)
+    })
+    const valueReduce = value.reduce((total, numero) => total + numero, 0)
+    setTotalValue(valueReduce)
+  }, [productsLocalStorage])
 
   const handleRemoveProduct = (indexProduct: number) => {
     const getProducts: [] = localStorageService.getProductsLocalStorage(
@@ -32,30 +45,31 @@ const MyCard: React.FC = () => {
 
   const handleAddOrRemoveSingleProduct = (
     products: SingleProductProps,
-    signal: string
+    signal: string,
+    productIndex: number
   ) => {
-    const getProducts: [] = localStorageService.getProductsLocalStorage(
-      1,
-      'products'
-    )
+    const getProducts: SingleProductProps[] =
+      localStorageService.getProductsLocalStorage(1, 'products')
     const findProduct = getProducts.find(
       (el: SingleProductProps) => el.id === products.id
     )
 
     if (findProduct !== undefined) {
       const quantityFormat = parseInt(products?.quantity!)
-      const operator = signal === '-' ? quantityFormat - 1 : quantityFormat + 1
+      const operation = signal === '-' ? quantityFormat - 1 : quantityFormat + 1
 
       const newValue = {
         ...products,
-        quantity: operator
+        quantity: operation.toString()
       }
-      localStorage.setItem('products', JSON.stringify([newValue]))
-      const getProducts: [] = localStorageService.getProductsLocalStorage(
-        1,
-        'products'
-      )
-      console.log(getProducts)
+
+      getProducts.splice(productIndex, 1, newValue)
+
+      if (operation === 0) {
+        getProducts.splice(productIndex, 1)
+      }
+
+      localStorage.setItem('products', JSON.stringify(getProducts))
       setProductsLocalStorage(getProducts)
     }
   }
@@ -75,7 +89,7 @@ const MyCard: React.FC = () => {
                 <S.CountProducts>
                   <S.IconWrapper
                     onClick={() =>
-                      handleAddOrRemoveSingleProduct(products, '-')
+                      handleAddOrRemoveSingleProduct(products, '-', index)
                     }
                   >
                     <RemoveIcon />
@@ -85,7 +99,7 @@ const MyCard: React.FC = () => {
                   </S.QuantityProductWrapper>
                   <S.IconWrapper
                     onClick={() =>
-                      handleAddOrRemoveSingleProduct(products, '+')
+                      handleAddOrRemoveSingleProduct(products, '+', index)
                     }
                   >
                     <AddIcon />
@@ -120,7 +134,13 @@ const MyCard: React.FC = () => {
   const renderCardPrice = () => {
     return (
       <S.CardPriceWrapper>
-        <S.TotalPrice>Total: R$30,00</S.TotalPrice>
+        <S.TotalPrice>
+          Total:{' '}
+          {new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+          }).format(totalValue)}
+        </S.TotalPrice>
 
         <Button
           label="continuar"
