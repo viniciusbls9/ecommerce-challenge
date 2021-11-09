@@ -33,11 +33,11 @@ export default {
       localStorage.setItem(key, JSON.stringify(arrayProducts))
     }
   },
-  getProductsLocalStorage: () => {
-    const getKey = localStorage?.key(1)
+  getProductsLocalStorage: (keyIndex: number, key: string) => {
+    const getKey = localStorage?.key(keyIndex)
 
     const getLocalStorage =
-      getKey !== '' ? JSON.parse(localStorage?.getItem('products') || '') : []
+      getKey !== '' ? JSON.parse(localStorage?.getItem(key) || '') : []
 
     return getLocalStorage
   }

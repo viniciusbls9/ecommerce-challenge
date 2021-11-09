@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { useEffect, useState } from 'react'
 import Button from '@/components/Button'
 import { SingleProductProps } from '@/models/product'
@@ -26,12 +27,43 @@ const MyCard: React.FC = () => {
     )
     getProducts.splice(indexProduct, 1)
     localStorage.setItem('products', JSON.stringify(getProducts))
+    setProductsLocalStorage(getProducts)
+  }
+
+  const handleAddOrRemoveSingleProduct = (
+    products: SingleProductProps,
+    signal: string
+  ) => {
+    const getProducts: [] = localStorageService.getProductsLocalStorage(
+      1,
+      'products'
+    )
+    const findProduct = getProducts.find(
+      (el: SingleProductProps) => el.id === products.id
+    )
+
+    if (findProduct !== undefined) {
+      const quantityFormat = parseInt(products?.quantity!)
+      const operator = signal === '-' ? quantityFormat - 1 : quantityFormat + 1
+
+      const newValue = {
+        ...products,
+        quantity: operator
+      }
+      localStorage.setItem('products', JSON.stringify([newValue]))
+      const getProducts: [] = localStorageService.getProductsLocalStorage(
+        1,
+        'products'
+      )
+      console.log(getProducts)
+      setProductsLocalStorage(getProducts)
+    }
   }
 
   const renderProductCard = () => {
     return (
       <S.CardProductWrapper>
-        {productsLocalStorage.map((products: SingleProductProps, index) => {
+        {productsLocalStorage?.map((products: SingleProductProps, index) => {
           return (
             <>
               <S.InfoProducts key={products.id}>
@@ -41,13 +73,21 @@ const MyCard: React.FC = () => {
 
               <S.InfoCountProducts>
                 <S.CountProducts>
-                  <S.IconWrapper>
+                  <S.IconWrapper
+                    onClick={() =>
+                      handleAddOrRemoveSingleProduct(products, '-')
+                    }
+                  >
                     <RemoveIcon />
                   </S.IconWrapper>
                   <S.QuantityProductWrapper>
-                    <S.QuantityProduct>{products.quantity}</S.QuantityProduct>
+                    <S.QuantityProduct>{products?.quantity}</S.QuantityProduct>
                   </S.QuantityProductWrapper>
-                  <S.IconWrapper>
+                  <S.IconWrapper
+                    onClick={() =>
+                      handleAddOrRemoveSingleProduct(products, '+')
+                    }
+                  >
                     <AddIcon />
                   </S.IconWrapper>
                 </S.CountProducts>
@@ -63,7 +103,10 @@ const MyCard: React.FC = () => {
                     {new Intl.NumberFormat('pt-BR', {
                       style: 'currency',
                       currency: 'BRL'
-                    }).format(parseInt(products?.price || ''))}
+                    }).format(
+                      parseInt(products?.price || '') *
+                        parseInt(products?.quantity || '')
+                    )}
                   </S.ProductPrice>
                 </S.ProductPriceWrapper>
               </S.InfoCountProducts>
@@ -107,7 +150,7 @@ const MyCard: React.FC = () => {
 
   return (
     <S.CartWrapper>
-      {productsLocalStorage.length ? (
+      {productsLocalStorage?.length ? (
         <>
           <S.PageTitle textAlign="left">meu carrinho</S.PageTitle>
           <S.CartContainer>

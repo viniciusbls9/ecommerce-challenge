@@ -1,6 +1,6 @@
 export interface SingleProductProps {
   id?: number
-  quantity?: number
+  quantity?: string
   image?: string
   title?: string
   price?: string
