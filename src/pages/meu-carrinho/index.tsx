@@ -20,7 +20,10 @@ const MyCard: React.FC = () => {
   }, [])
 
   const handleRemoveProduct = (indexProduct: number) => {
-    const getProducts: [] = localStorageService.getProductsLocalStorage()
+    const getProducts: [] = localStorageService.getProductsLocalStorage(
+      1,
+      'products'
+    )
     getProducts.splice(indexProduct, 1)
     localStorage.setItem('products', JSON.stringify(getProducts))
   }
