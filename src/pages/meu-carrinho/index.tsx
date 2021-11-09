@@ -7,7 +7,9 @@ import * as S from './styles'
 import localStorageService from '@/services/localStorageService'
 
 const MyCard: React.FC = () => {
-  const [productsLocalStorage, setProductsLocalStorage] = useState([])
+  const [productsLocalStorage, setProductsLocalStorage] = useState<
+    SingleProductProps[]
+  >([])
 
   useEffect(() => {
     const getProducts = localStorageService.getProductsLocalStorage()
